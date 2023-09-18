@@ -1,1 +1,1 @@
-# web-performant-snippets
+# webperf-snippets
