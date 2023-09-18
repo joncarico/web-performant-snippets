@@ -1,0 +1,5 @@
+<!-- Non-render Blocking CSS with Fallback -->
+<link rel="preload" href="assets/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
+<noscript>
+  <link rel="stylesheet" href="assets/main.css">
+</noscript>

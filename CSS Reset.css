@@ -1,0 +1,26 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; /* web-safe, system font stack */
+  font-size: clamp(16px, 2vw, 18px); /* https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/ */
+  line-height: 1.5em;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg, figure {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+iframe {
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+h1, h2, h3, h4, h5, h6, p {
+  overflow-wrap: break-word;
+}

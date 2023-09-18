@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional; /* https://web.dev/preload-optional-fonts/ */
+  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"), url(assets/opensans.woff2) format("woff2");
+}
+
+:root {
+  --system-ui: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial;
+}
+
+body {
+  font-family: var(--system-ui), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "OpenSans-SemiBold", var(--system-ui), serif;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+p {
+  font-weight: 400;
+  margin-bottom: 1.5em;
+}
+
+a {
+  text-decoration: underline;
+}
