@@ -17,6 +17,7 @@ body {
     background-color: #111111;
     color: #eeeeee;
   }
+}
 img, picture, video, canvas, svg, figure {
   display: block;
   height: auto;
