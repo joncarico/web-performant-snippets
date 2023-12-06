@@ -1,11 +1,37 @@
 <!-- LCP Image - Eager Loading https://web.dev/learn/design/responsive-images/ -->
-<figure>
-  <picture>
-    <!--[if IE 9]><video style="display: none;"><![endif]-->
-    <source media="(max-width: 720px)" width="600" height="300" srcset="https://via.placeholder.com/600x300.jpg?text=LCP+Source+Media+Max+720" />
-    <source media="(min-width: 721px)" width="1200" height="600" srcset="https://via.placeholder.com/1200x600.jpg?text=LCP+Source+Media+Min+721+1x, https://via.placeholder.com/1200x600.jpg?text=Source+Media+Min+721+2x 2x, https://via.placeholder.com/1200x600.jpg?text=Source+Media+Min+721+3x 3x" />
-    <!--[if IE 9]></video><![endif]-->
-    <img width="600" height="300" src="https://via.placeholder.com/600x300.jpg?text=LCP+Img+Src" alt="Image Alt" loading="eager" decoding="sync" fetchpriority="high" />
-  </picture>
-  <figcaption>Image Caption</figcaption>
-</figure>
+<link rel="preload" media="(max-width: 480px)" href="https://placehold.co/400x200?text=400x200" fetchpriority="high" as="image">
+<link rel="preload" media="(min-width: 481px) and (max-width: 767px)" href="https://placehold.co/750x375?text=750x375" fetchpriority="high" as="image">
+<link rel="preload" media="(min-width: 768px) and (max-width: 1023px)" href="https://placehold.co/1000x500?text=1000x500" fetchpriority="high" as="image">
+<link rel="preload" media="(min-width: 1024px)" href="https://placehold.co/1600x800?text=1600x800" fetchpriority="high" as="image">
+
+<style>
+    img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        width: 100%;
+    }
+</style>
+
+<picture>
+    <source media="(min-width: 1024px)" srcset="https://placehold.co/1600x800?text=1600x800">
+    <source media="(min-width: 768px)" srcset="https://placehold.co/1000x500?text=1000x500">
+    <source media="(min-width: 481px)" srcset="https://placehold.co/750x375?text=750x375">
+    <source media="(min-width: 0px)" srcset="https://placehold.co/400x200?text=400x200">
+    <img width="3200" height="1600" src="https://placehold.co/3200x1600?text=3200x1600" loading="eager" decoding="sync" alt="this is a responsive placeholder image with different resolutions based on viewport size.">
+</picture>
+
+<!-- https://developers.google.com/search/docs/appearance/structured-data/image-license-metadata#structured-data -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "ImageObject",
+      "contentUrl": "https://placehold.co/3200x1600?text=3200x1600",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creditText": "placehold.co",
+      "creator": {
+        "@type": "Organization",
+        "name": "placehold.co"
+       }
+    }
+</script>
